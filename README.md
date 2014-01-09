@@ -33,6 +33,29 @@ virtual terminal like ```/dev/pts/23``` as show below:
 
 ![before_hijack](http://code.digital-static.net/termijack/raw/tip/doc/before_hijack_lite.png)
 
+Using gdb to intercept the target process, we can use syscalls (open, fcntl)
+to create a set of named pipes that will act as the intermediate socket between
+the target process and the hijacker script. Other syscalls (dup, dup2) are used
+to clone the original standard streams to temporary place-holders and to swap
+the file descriptors of the named pipes and standard streams.
+
+In the situation where we only hijack the standard streams and don't reflect
+the to/from the original streams, this setup looks something like the following:
+
+![after_hijack](http://code.digital-static.net/termijack/raw/tip/doc/after_hijack_lite.png)
+
+The termijack script also allows the ability to mirror the standard streams
+to/from the hijacked process. This means that the new stdin and hijacked stdin
+will be multiplexed to the target process. Additionally, and stdout or stderr
+coming from the hijacked process will be sent to both the hijacked virtual
+terminal and to the hijacker's virtual terminal. This setup looks something
+like the following:
+
+![after_hijack_reflect](http://code.digital-static.net/termijack/raw/tip/doc/after_hijack_reflect_lite.png)
+
+Of course, at the very end, when the termijack script detaches from the target
+process, it will undo all of the shenanigans and close file descriptors that it
+opened. Ideally, it's operation should be very surreptitious.
 
 ## Usage ##
 
