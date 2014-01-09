@@ -28,6 +28,9 @@ Requires the GNU Debugger (gdb) in order to run.
 
 ## Usage ##
 
-Hijack stdin, stdout and stderr:
+Hijack stdin, stdout, and stderr:
 
 * ```./termijack.py -ioe $TARGET_PID```
+
+Hijack stdin, stdout, and stderr. Also, reflect them back to the target process:
+* ```./termijack.py -IOE $TARGET_PID```
