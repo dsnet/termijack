@@ -45,11 +45,11 @@ the to/from the original streams, this setup looks something like the following:
 ![after_hijack](http://code.digital-static.net/termijack/raw/tip/doc/after_hijack_lite.png)
 
 The termijack script also allows the ability to mirror the standard streams
-to/from the hijacked process. This means that the new stdin and hijacked stdin
-will be multiplexed to the target process. Additionally, and stdout or stderr
-coming from the hijacked process will be sent to both the hijacked virtual
-terminal and to the hijacker's virtual terminal. This setup looks something
-like the following:
+to/from the hijacked process. This means that the hijacked stdin and hijacker's
+stdin will be multiplexed to the target process. Additionally, and stdout or
+stderr coming from the hijacked process will be sent to both the hijacked
+virtual terminal and to the hijacker's virtual terminal. This setup looks
+something like the following:
 
 ![after_hijack_reflect](http://code.digital-static.net/termijack/raw/tip/doc/after_hijack_reflect_lite.png)
 
