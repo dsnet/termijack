@@ -26,6 +26,14 @@ streams. Support for them may be added in the future.
 
 Requires the GNU Debugger (gdb) in order to run.
 
+## Theory ##
+
+Typically, the standard streams (stdin, stdout, stderr) are connected to a
+virtual terminal like ```/dev/pts/23``` as show below:
+
+![before_hijack](http://code.digital-static.net/termijack/raw/tip/doc/before_hijack_lite.png)
+
+
 ## Usage ##
 
 Hijack stdin, stdout, and stderr:
