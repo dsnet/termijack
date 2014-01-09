@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-![terminal](http://code.digital-static.net/termijack/raw/tip/doc/terminal.png)
+![terminal](http://code.digital-static.net/termijack/raw/tip/doc/terminal.gif)
 
 Hijacks the standard streams (stdout, stdin, and/or stderr) from an already
 running process and silently returns them back after finishing. While this
