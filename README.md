@@ -26,6 +26,7 @@ streams. Support for them may be added in the future.
 
 Requires the GNU Debugger (gdb) in order to run.
 
+
 ## Theory ##
 
 Typically, the standard streams (stdin, stdout, stderr) are connected to a
@@ -56,6 +57,7 @@ something like the following:
 Of course, at the very end, when the termijack script detaches from the target
 process, it will undo all of the shenanigans and close file descriptors that it
 opened. Ideally, it's operation should be very surreptitious.
+
 
 ## Usage ##
 
